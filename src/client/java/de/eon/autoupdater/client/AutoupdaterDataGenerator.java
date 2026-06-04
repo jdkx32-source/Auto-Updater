@@ -1,4 +1,4 @@
-package de.packetpisser.autoupdater.client;
+package de.eon.autoupdater.client;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

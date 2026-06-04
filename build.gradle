@@ -1,12 +1,3 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.guardsquare:proguard-gradle:7.4.2'
-    }
-}
-
 plugins {
     id 'fabric-loom' version '1.16-SNAPSHOT'
     id 'maven-publish'
@@ -111,26 +102,4 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
-}
-
-def obfuscatedJar = layout.buildDirectory.file("libs/${project.archives_base_name}-${project.version}-obfuscated.jar")
-
-tasks.register('proguard', proguard.gradle.ProGuardTask) {
-    dependsOn tasks.named('jar')
-    configuration 'proguard.pro'
-
-    // Inject the jar output
-    injars tasks.named('jar').get().archiveFile
-
-    // Obfuscate to a new jar
-    outjars obfuscatedJar
-
-    // Library jars are required so ProGuard knows about Java and Fabric classes
-    libraryjars "${System.getProperty('java.home')}/jmods"
-    libraryjars configurations.compileClasspath
-}
-
-tasks.named('remapJar') {
-    dependsOn tasks.named('proguard')
-    inputFile.set(obfuscatedJar)
 }

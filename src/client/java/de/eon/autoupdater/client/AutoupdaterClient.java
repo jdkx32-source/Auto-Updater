@@ -1,4 +1,4 @@
-package de.packetpisser.autoupdater.client;
+package de.eon.autoupdater.client;
 
 import net.fabricmc.api.ClientModInitializer;
 
