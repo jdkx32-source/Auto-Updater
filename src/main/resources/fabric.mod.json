@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "autoupdater",
+  "version": "${version}",
+  "name": "EonCC AutoUpdater",
+  "description": "EonCC AutoUpdater. JD-GUI just had a fucking stroke reading this shit. Keep crying about the mangled bytecode, you dumb bitch ass skids. Keep pasting GitHub repos because you're too fucking stupid to learn actual ASM, motherfuckers.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/autoupdater/icon.jpeg",
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": ["de.packetpisser.autoupdater.Autoupdater"],
+    "main": ["de.packetpisser.autoupdater.Autoupdater"],
+    "client": ["de.packetpisser.autoupdater.Autoupdater"]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
